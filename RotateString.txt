@@ -1,0 +1,15 @@
+class Solution {
+    public boolean rotateString(String s, String goal) {
+        if(s.length()!=goal.length) return false;
+        int[] freq=new int[26];
+        int[] freq1=new int[26];
+        for(int i=0;i<s.length();i++){
+            freq[s.charAt(i)-'a']++;
+            freq1[goal.charAt(i)-'a']++;
+        }
+        for(int i=0;i<26;i++){
+            if(freq[i]!=freq1[i]) return false;
+        }
+        return true;
+    }
+}
